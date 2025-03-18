@@ -1,0 +1,28 @@
+<div class="dashboard-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Select Metric</mat-label>
+    <mat-select (selectionChange)="onMetricChange($event)">
+      <mat-option value="">Select Metric</mat-option>
+      <mat-option value="salesData">Sales Data</mat-option>
+      <mat-option value="userEngagement">User Engagement</mat-option>
+      <mat-option value="performanceStats">Performance Stats</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="selectedMetric$ | async as selectedMetric">
+    <mat-card class="chart-container">
+      <app-bar-chart
+        *ngIf="selectedMetric === 'salesData'"
+        [data]="data$ | async"
+      ></app-bar-chart>
+      <app-pie-chart
+        *ngIf="selectedMetric === 'userEngagement'"
+        [data]="data$ | async"
+      ></app-pie-chart>
+      <app-line-chart
+        *ngIf="selectedMetric === 'performanceStats'"
+        [data]="data$ | async"
+      ></app-line-chart>
+    </mat-card>
+  </div>
+</div>

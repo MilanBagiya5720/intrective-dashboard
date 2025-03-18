@@ -1,0 +1,26 @@
+{
+  "salesData": [
+    {
+      "name": "Sales",
+      "series": [
+        { "name": "January", "value": 65 },
+        { "name": "February", "value": 59 },
+        { "name": "March", "value": 80 }
+      ]
+    }
+  ],
+  "userEngagement": [
+    { "name": "Login", "value": 300 },
+    { "name": "Signup", "value": 150 },
+    { "name": "Purchase", "value": 50 }
+  ],
+  "performanceStats": [
+    {
+      "name": "CPU Usage",
+      "series": [
+        { "name": "Jan", "value": 40 },
+        { "name": "Feb", "value": 60 }
+      ]
+    }
+  ]
+}

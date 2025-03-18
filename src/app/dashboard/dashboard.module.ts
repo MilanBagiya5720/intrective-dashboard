@@ -1,0 +1,30 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
+import { BarChartComponent } from '../components/bar-chart/bar-chart.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { SharedModule } from '../shared/shared.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { DashboardComponent } from './dashboard.component';
+import { PieChartComponent } from '../components/pie-chart/pie-chart.component';
+import { LineChartComponent } from '../components/line-chart/line-chart.component';
+
+
+@NgModule({
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    SharedModule,
+    SidebarComponent,
+    HeaderComponent,
+    PieChartComponent,
+    LineChartComponent,
+    BarChartComponent
+  ],
+  declarations: [DashboardComponent],
+  exports: [DashboardComponent]
+})
+export class DashboardModule { }
+
+
