@@ -1,23 +1,19 @@
-<div class="chart-wrapper">
-  <div class="chart-container">
-    <ngx-charts-bar-horizontal
-      [results]="data || []"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="true"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      xAxisLabel="Month"
-      yAxisLabel="Sales"
-      [scheme]="config?.colorScheme"
-      [view]="[
-        config?.chartWidth * config?.zoomLevel,
-        config?.chartHeight * config?.zoomLevel
-      ]"
-      [gradient]="config?.gradient"
-      [barPadding]="config?.barPadding"
-      [roundEdges]="config?.roundEdges"
-    >
-    </ngx-charts-bar-horizontal>
-  </div>
-</div>
+<ngx-charts-bar-horizontal
+  [results]="data || []"
+  [xAxis]="true"
+  [yAxis]="true"
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  xAxisLabel="Month"
+  yAxisLabel="Sales"
+  [scheme]="config?.colorScheme"
+  [view]="[
+    config?.chartWidth * config?.zoomLevel,
+    config?.chartHeight * config?.zoomLevel
+  ]"
+  [gradient]="config?.gradient"
+  [barPadding]="config?.barPadding"
+  [roundEdges]="config?.roundEdges"
+>
+</ngx-charts-bar-horizontal>

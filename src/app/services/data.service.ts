@@ -14,7 +14,7 @@ export class DataService {
         name: 'vivid',
         selectable: true,
         group: ScaleType.Ordinal,
-        domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA', '#FF0000', '#00FF00', '#0000FF'] // Added more colors here
+        domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA', '#FF0000', '#00FF00', '#0000FF']
     };
 
     private chartConfigSubject = new BehaviorSubject<ChartConfig>({

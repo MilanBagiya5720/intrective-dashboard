@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',

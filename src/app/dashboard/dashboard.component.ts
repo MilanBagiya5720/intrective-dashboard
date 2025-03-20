@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { AppState } from '../store/app.state';
 import { selectMetric } from '../store/dashboard.actions';
+import { selectMetricData, selectSelectedMetric } from '../store/dashboard.selectors';
 
 interface MetricOption {
   value: string;
@@ -37,8 +38,8 @@ export class DashboardComponent implements OnInit {
     private store: Store<AppState>,
     private dataService: DataService
   ) {
-    this.selectedMetric$ = this.store.select(state => state.dashboard.selectedMetric);
-    this.data$ = this.store.select(state => state.dashboard.metrics?.[state.dashboard.selectedMetric]);
+    this.selectedMetric$ = this.store.pipe(select(selectSelectedMetric));
+    this.data$ = this.store.pipe(select(selectMetricData));
   }
 
   ngOnInit(): void {
