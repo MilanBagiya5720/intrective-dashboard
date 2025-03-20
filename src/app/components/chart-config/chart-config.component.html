@@ -1,0 +1,79 @@
+<div class="customization-panel">
+  <h3>Customize Visualization</h3>
+
+  <div class="form-group">
+    <label for="colorScheme">Color Scheme:</label>
+    <select
+      id="colorScheme"
+      [(ngModel)]="selectedColorScheme"
+      (ngModelChange)="onColorSchemeChange($event)"
+    >
+      <option value="vivid">Vivid</option>
+      <option value="natural">Natural</option>
+      <option value="cool">Cool</option>
+      <option value="fire">Fire</option>
+      <option value="solar">Solar</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="chartWidth">Chart Width:</label>
+    <input
+      type="number"
+      id="chartWidth"
+      [(ngModel)]="chartConfig.chartWidth"
+      (ngModelChange)="updateChartConfig()"
+      min="300"
+      max="1200"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="chartHeight">Chart Height:</label>
+    <input
+      type="number"
+      id="chartHeight"
+      [(ngModel)]="chartConfig.chartHeight"
+      (ngModelChange)="updateChartConfig()"
+      min="200"
+      max="800"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="barPadding">Bar Padding:</label>
+    <input
+      type="number"
+      id="barPadding"
+      [(ngModel)]="chartConfig.barPadding"
+      (ngModelChange)="updateChartConfig()"
+      min="0"
+      max="20"
+    />
+  </div>
+
+  <div class="form-group">
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="chartConfig.gradient"
+        (ngModelChange)="updateChartConfig()"
+      />
+      Enable Gradient
+    </label>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <input
+        type="checkbox"
+        [(ngModel)]="chartConfig.roundEdges"
+        (ngModelChange)="updateChartConfig()"
+      />
+      Round Edges
+    </label>
+  </div>
+
+  <button (click)="zoomIn()">Zoom In (+)</button>
+  <button (click)="zoomOut()">Zoom Out (-)</button>
+</div>

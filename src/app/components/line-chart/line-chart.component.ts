@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+import { ChartConfig } from '../../models/chart.model';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-line-chart',
@@ -10,4 +12,11 @@ import { SharedModule } from '../../shared/shared.module';
 })
 export class LineChartComponent {
   @Input() data: any;
+  config: ChartConfig;
+
+  constructor(private dataService: DataService) {
+    this.dataService.chartConfig$.subscribe(config => {
+      this.config = { ...config };
+    })
+  }
 }

@@ -1,25 +1,61 @@
 {
   "salesData": [
-    {
-      "name": "Sales",
-      "series": [
-        { "name": "January", "value": 65 },
-        { "name": "February", "value": 59 },
-        { "name": "March", "value": 80 }
-      ]
-    }
+    { "name": "January", "value": 65 },
+    { "name": "February", "value": 59 },
+    { "name": "March", "value": 80 },
+    { "name": "April", "value": 70 },
+    { "name": "May", "value": 75 },
+    { "name": "June", "value": 80 },
+    { "name": "July", "value": 90 },
+    { "name": "August", "value": 85 },
+    { "name": "September", "value": 95 },
+    { "name": "October", "value": 100 },
+    { "name": "November", "value": 110 },
+    { "name": "December", "value": 105 }
   ],
   "userEngagement": [
     { "name": "Login", "value": 300 },
     { "name": "Signup", "value": 150 },
-    { "name": "Purchase", "value": 50 }
+    { "name": "Purchase", "value": 50 },
+    { "name": "Feedback", "value": 20 },
+    { "name": "Referral", "value": 30 },
+    { "name": "Likes", "value": 40 },
+    { "name": "Comments", "value": 55 },
+    { "name": "Shares", "value": 45 }
   ],
   "performanceStats": [
     {
       "name": "CPU Usage",
       "series": [
         { "name": "Jan", "value": 40 },
-        { "name": "Feb", "value": 60 }
+        { "name": "Feb", "value": 60 },
+        { "name": "Mar", "value": 55 },
+        { "name": "Apr", "value": 50 },
+        { "name": "May", "value": 65 },
+        { "name": "Jun", "value": 70 },
+        { "name": "Jul", "value": 72 },
+        { "name": "Aug", "value": 75 },
+        { "name": "Sep", "value": 78 },
+        { "name": "Oct", "value": 80 },
+        { "name": "Nov", "value": 82 },
+        { "name": "Dec", "value": 85 }
+      ]
+    },
+    {
+      "name": "Memory Usage",
+      "series": [
+        { "name": "Jan", "value": 70 },
+        { "name": "Feb", "value": 65 },
+        { "name": "Mar", "value": 75 },
+        { "name": "Apr", "value": 80 },
+        { "name": "May", "value": 85 },
+        { "name": "Jun", "value": 90 },
+        { "name": "Jul", "value": 92 },
+        { "name": "Aug", "value": 95 },
+        { "name": "Sep", "value": 98 },
+        { "name": "Oct", "value": 100 },
+        { "name": "Nov", "value": 105 },
+        { "name": "Dec", "value": 110 }
       ]
     }
   ]

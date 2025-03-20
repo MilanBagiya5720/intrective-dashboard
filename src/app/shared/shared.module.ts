@@ -11,8 +11,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { LineChartComponent, NgxChartsModule, PieChartComponent } from '@swimlane/ngx-charts';
-import { BarChartComponent } from '../components/bar-chart/bar-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const modules = [
   MatGridListModule,
@@ -28,6 +28,7 @@ const modules = [
   NgxChartsModule,
   MatListModule,
   MatMenuModule,
+  MatSlideToggleModule
 ]
 
 @NgModule({

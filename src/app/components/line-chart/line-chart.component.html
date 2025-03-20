@@ -1,11 +1,15 @@
 <ngx-charts-line-chart
-  [view]="[700, 400]"
+  [view]="[
+    config.chartWidth * config.zoomLevel,
+    config.chartHeight * config.zoomLevel
+  ]"
   [results]="data || []"
   [xAxis]="true"
   [yAxis]="true"
   [legend]="true"
   [showXAxisLabel]="true"
   [showYAxisLabel]="true"
+  [scheme]="config.colorScheme"
   xAxisLabel="Metric"
   yAxisLabel="Value"
 >

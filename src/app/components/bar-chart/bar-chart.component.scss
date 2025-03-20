@@ -1,0 +1,11 @@
+.chart-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+}
+
+.chart-container {
+  transition: transform 0.1s ease-out;
+}

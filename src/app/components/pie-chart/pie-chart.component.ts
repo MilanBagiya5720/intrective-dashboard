@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { ChartComponent } from '@swimlane/ngx-charts';
 import { SharedModule } from '../../shared/shared.module';
+import { DataService } from '../../services/data.service';
+import { ChartConfig } from '../../models/chart.model';
 
 @Component({
   selector: 'app-pie-chart',
@@ -10,4 +13,11 @@ import { SharedModule } from '../../shared/shared.module';
 })
 export class PieChartComponent {
   @Input() data: any;
+  config: ChartConfig;
+
+  constructor(private dataService: DataService) {
+    this.dataService.chartConfig$.subscribe(config => {
+      this.config = { ...config };
+    })
+  }
 }

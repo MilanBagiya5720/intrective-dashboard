@@ -1,7 +1,12 @@
 <ngx-charts-pie-chart
-  [view]="[700, 400]"
+  [view]="[
+    config.chartWidth * config.zoomLevel,
+    config.chartHeight * config.zoomLevel
+  ]"
   [results]="data || []"
   [legend]="true"
   [labels]="true"
+  [animations]="true"
+  [scheme]="config.colorScheme"
 >
 </ngx-charts-pie-chart>

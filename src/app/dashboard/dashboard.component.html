@@ -10,7 +10,10 @@
   </mat-form-field>
 
   <div *ngIf="selectedMetric$ | async as selectedMetric">
-    <mat-card class="chart-container">
+    <mat-card-header>
+      <mat-card-title>{{ getChartTitle(selectedMetric) }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="chart-wrapper">
       <app-bar-chart
         *ngIf="selectedMetric === 'salesData'"
         [data]="data$ | async"
@@ -23,6 +26,7 @@
         *ngIf="selectedMetric === 'performanceStats'"
         [data]="data$ | async"
       ></app-line-chart>
-    </mat-card>
+      <app-chart-config></app-chart-config>
+    </mat-card-content>
   </div>
 </div>
