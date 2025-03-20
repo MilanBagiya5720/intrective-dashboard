@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
+import { ChartConfig } from '../../models/chart.model';
 import { DataService } from '../../services/data.service';
 import { SharedModule } from '../../shared/shared.module';
-import { ChartConfig } from '../../models/chart.model';
 
 @Component({
-  selector: 'app-bar-chart',
+  selector: 'app-vertical-chart',
   standalone: true,
   imports: [SharedModule],
-  templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.scss']
+  templateUrl: './vertical-chart.component.html',
+  styleUrl: './vertical-chart.component.scss'
 })
-export class BarChartComponent {
+export class VerticalChartComponent {
   @Input() data: any = [];
   @Input() config: ChartConfig;
 

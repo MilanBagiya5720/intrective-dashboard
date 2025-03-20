@@ -1,20 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartConfig } from '../../models/chart.model';
 import { DataService } from '../../services/data.service';
 import { SharedModule } from '../../shared/shared.module';
-import { ChartConfig } from '../../models/chart.model';
+
+interface ColorSchemeOption {
+  value: string;
+  label: string;
+}
 
 @Component({
   selector: 'app-chart-config',
   standalone: true,
-  imports: [SharedModule],
+  imports: [
+    SharedModule,
+
+  ],
   templateUrl: './chart-config.component.html',
   styleUrls: ['./chart-config.component.scss']
 })
 export class ChartConfigComponent implements OnInit {
   chartConfig!: ChartConfig;
-  selectedColorScheme: string = 'vivid';
+  selectedColorScheme = 'vivid';
 
-  private colorSchemes: { [key: string]: string[] } = {
+  readonly colorSchemeOptions: ColorSchemeOption[] = [
+    { value: 'vivid', label: 'Vivid' },
+    { value: 'natural', label: 'Natural' },
+    { value: 'cool', label: 'Cool' },
+    { value: 'fire', label: 'Fire' },
+    { value: 'solar', label: 'Solar' }
+  ];
+
+  private readonly colorSchemes: Record<string, string[]> = {
     vivid: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA', '#FF0000', '#00FF00', '#0000FF'],
     natural: ['#8D6E63', '#78909C', '#4CAF50', '#FFC107', '#9C27B0'],
     cool: ['#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50'],
@@ -30,13 +46,13 @@ export class ChartConfigComponent implements OnInit {
     });
   }
 
-  public updateChartConfig(): void {
+  updateChartConfig(): void {
     this.dataService.updateData({ ...this.chartConfig });
   }
 
-  onColorSchemeChange(schemeName: string): void {
-    const newColors = this.colorSchemes[schemeName] || this.colorSchemes['vivid'];
-    this.dataService.updateColorScheme(newColors);
+  onColorSchemeChange(scheme: string): void {
+    const colors = this.colorSchemes[scheme] || this.colorSchemes['vivid'];
+    this.dataService.updateColorScheme(colors);
   }
 
   zoomIn(): void {
@@ -47,10 +63,5 @@ export class ChartConfigComponent implements OnInit {
   zoomOut(): void {
     this.chartConfig.zoomLevel = Math.max(this.chartConfig.zoomLevel - 0.1, 0.5);
     this.updateChartConfig();
-  }
-
-  changeColors(): void {
-    const newColors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD'];
-    this.dataService.updateColorScheme(newColors);
   }
 }

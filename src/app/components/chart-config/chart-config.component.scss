@@ -1,73 +1,77 @@
-.customization-panel {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// chart-config.component.scss
+:host {
+  display: block;
+  width: 100%;
   max-width: 400px;
-  margin: 20px auto;
+}
 
-  h3 {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: #333;
-    text-align: center;
-  }
+.panel-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a237e;
+  text-align: center;
+  margin: 0 0 24px;
+}
 
-  .form-group {
-    margin-bottom: 15px;
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #555;
-    }
+  .form-field {
+    width: 100%;
 
-    input[type="number"],
-    select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1em;
-      box-sizing: border-box;
+    ::ng-deep .mat-mdc-form-field {
+      .mdc-text-field {
+        border-radius: 8px;
+      }
 
-      &:focus {
-        border-color: #007bff;
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      .mdc-text-field--focused {
+        .mdc-line-ripple {
+          background-color: #3f51b5;
+        }
       }
     }
+  }
 
-    input[type="checkbox"] {
-      margin-right: 10px;
+  mat-checkbox {
+    color: #666;
+
+    &.mat-mdc-checkbox-checked {
+      color: #3f51b5;
     }
   }
 
-  button {
-    display: inline-block;
-    padding: 10px 15px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
 
-    &:hover {
-      background-color: #0056b3;
+    button {
+      flex: 1;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      mat-icon {
+        margin-right: 8px;
+        vertical-align: middle;
+      }
     }
+  }
+}
 
-    &:active {
-      background-color: #004080;
-    }
+@media (max-width: 480px) {
+  .config-panel {
+    padding: 16px;
 
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    .button-group {
+      flex-direction: column;
     }
   }
 }

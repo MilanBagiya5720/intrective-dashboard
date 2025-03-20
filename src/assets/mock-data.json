@@ -58,5 +58,19 @@
         { "name": "Dec", "value": 110 }
       ]
     }
+  ],
+  "stockData": [
+    { "name": "Jan", "value": 50 },
+    { "name": "Feb", "value": 60 },
+    { "name": "Mar", "value": 70 },
+    { "name": "Apr", "value": 75 },
+    { "name": "May", "value": 80 },
+    { "name": "Jun", "value": 85 },
+    { "name": "Jul", "value": 90 },
+    { "name": "Aug", "value": 95 },
+    { "name": "Sep", "value": 100 },
+    { "name": "Oct", "value": 105 },
+    { "name": "Nov", "value": 110 },
+    { "name": "Dec", "value": 115 }
   ]
 }

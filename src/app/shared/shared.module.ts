@@ -13,6 +13,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const modules = [
   MatGridListModule,
@@ -28,7 +30,9 @@ const modules = [
   NgxChartsModule,
   MatListModule,
   MatMenuModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatInputModule,
+  MatCheckboxModule,
 ]
 
 @NgModule({

@@ -1,79 +1,88 @@
-<div class="customization-panel">
-  <h3>Customize Visualization</h3>
+<!-- chart-config.component.html -->
+<div class="config-panel">
+  <h3 class="panel-title">Chart Customization</h3>
 
-  <div class="form-group">
-    <label for="colorScheme">Color Scheme:</label>
-    <select
-      id="colorScheme"
-      [(ngModel)]="selectedColorScheme"
-      (ngModelChange)="onColorSchemeChange($event)"
+  <form class="config-form">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Color Scheme</mat-label>
+      <mat-select
+        [(ngModel)]="selectedColorScheme"
+        (ngModelChange)="onColorSchemeChange($event)"
+        name="colorScheme"
+      >
+        <mat-option
+          *ngFor="let scheme of colorSchemeOptions"
+          [value]="scheme.value"
+        >
+          {{ scheme.label }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Chart Width</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="chartConfig.chartWidth"
+        (ngModelChange)="updateChartConfig()"
+        name="chartWidth"
+        min="300"
+        max="1200"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Chart Height</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="chartConfig.chartHeight"
+        (ngModelChange)="updateChartConfig()"
+        name="chartHeight"
+        min="200"
+        max="800"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Bar Padding</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="chartConfig.barPadding"
+        (ngModelChange)="updateChartConfig()"
+        name="barPadding"
+        min="0"
+        max="20"
+      />
+    </mat-form-field>
+
+    <mat-checkbox
+      [(ngModel)]="chartConfig.gradient"
+      (ngModelChange)="updateChartConfig()"
+      name="gradient"
+      color="primary"
     >
-      <option value="vivid">Vivid</option>
-      <option value="natural">Natural</option>
-      <option value="cool">Cool</option>
-      <option value="fire">Fire</option>
-      <option value="solar">Solar</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="chartWidth">Chart Width:</label>
-    <input
-      type="number"
-      id="chartWidth"
-      [(ngModel)]="chartConfig.chartWidth"
-      (ngModelChange)="updateChartConfig()"
-      min="300"
-      max="1200"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="chartHeight">Chart Height:</label>
-    <input
-      type="number"
-      id="chartHeight"
-      [(ngModel)]="chartConfig.chartHeight"
-      (ngModelChange)="updateChartConfig()"
-      min="200"
-      max="800"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="barPadding">Bar Padding:</label>
-    <input
-      type="number"
-      id="barPadding"
-      [(ngModel)]="chartConfig.barPadding"
-      (ngModelChange)="updateChartConfig()"
-      min="0"
-      max="20"
-    />
-  </div>
-
-  <div class="form-group">
-    <label>
-      <input
-        type="checkbox"
-        [(ngModel)]="chartConfig.gradient"
-        (ngModelChange)="updateChartConfig()"
-      />
       Enable Gradient
-    </label>
-  </div>
+    </mat-checkbox>
 
-  <div class="form-group">
-    <label>
-      <input
-        type="checkbox"
-        [(ngModel)]="chartConfig.roundEdges"
-        (ngModelChange)="updateChartConfig()"
-      />
+    <mat-checkbox
+      [(ngModel)]="chartConfig.roundEdges"
+      (ngModelChange)="updateChartConfig()"
+      name="roundEdges"
+      color="primary"
+    >
       Round Edges
-    </label>
-  </div>
+    </mat-checkbox>
 
-  <button (click)="zoomIn()">Zoom In (+)</button>
-  <button (click)="zoomOut()">Zoom Out (-)</button>
+    <div class="button-group">
+      <button mat-raised-button color="primary" (click)="zoomIn()">
+        <mat-icon>zoom_in</mat-icon> Zoom In
+      </button>
+      <button mat-raised-button color="primary" (click)="zoomOut()">
+        <mat-icon>zoom_out</mat-icon> Zoom Out
+      </button>
+    </div>
+  </form>
 </div>

@@ -10,6 +10,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { SharedModule } from '../shared/shared.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { VerticalChartComponent } from '../components/vertical-chart/vertical-chart.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DashboardComponent } from './dashboard.component';
     PieChartComponent,
     LineChartComponent,
     BarChartComponent,
-    ChartConfigComponent
+    ChartConfigComponent,
+    VerticalChartComponent
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent]
