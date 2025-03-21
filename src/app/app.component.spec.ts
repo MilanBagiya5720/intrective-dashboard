@@ -9,9 +9,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
-import { By } from '@angular/platform-browser'; // Added for better DOM querying
+import { By } from '@angular/platform-browser';
 
-// Mock HeaderComponent
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -21,7 +20,6 @@ class MockHeaderComponent {
   @Output() sidebarToggle = new EventEmitter<void>();
 }
 
-// Mock SidebarComponent
 @Component({
   selector: 'app-sidebar',
   standalone: true,
@@ -29,7 +27,6 @@ class MockHeaderComponent {
 })
 class MockSidebarComponent { }
 
-// Mock DashboardComponent
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -59,7 +56,7 @@ describe('AppComponent', () => {
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges(); // Trigger initial rendering
+    fixture.detectChanges();
   });
 
   it('should create the app component', () => {
@@ -112,9 +109,8 @@ describe('AppComponent', () => {
     it('should call toggleSidebar when header emits sidebarToggle event', () => {
       const spy = spyOn(component, 'toggleSidebar');
 
-      // Use By.css to find the app-header component
       const headerDebugElement = fixture.debugElement.query(By.css('app-header'));
-      expect(headerDebugElement).toBeTruthy(); // Ensure we found the element
+      expect(headerDebugElement).toBeTruthy();
 
       const headerComponent = headerDebugElement.componentInstance as MockHeaderComponent;
       headerComponent.sidebarToggle.emit();
