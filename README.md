@@ -182,3 +182,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **100% Test Coverage**: The project has achieved 100% test coverage, ensuring all code paths are well-tested.
 ![image](https://github.com/user-attachments/assets/8e78b424-d976-4cad-945e-9f6ddf5053ef)
+
+## Screenshot:
+
+- **Dashboard**: 
+![image](https://github.com/user-attachments/assets/4d40c88c-3bcb-41aa-b689-45dacccb93e0)
+
+- **Selected bar chart**: 
+![image](https://github.com/user-attachments/assets/483ce9b9-c57e-4288-ab9c-a61bade8de8d)
+
+- **Selected pie chart**: 
+![image](https://github.com/user-attachments/assets/d53fe26d-1860-43b1-a58b-3d4f1a9b9d6b)
+
+- **Selected line chart**: 
+![image](https://github.com/user-attachments/assets/23f84610-e11b-4f95-a7a6-4bce1a550235)
+
+- **Selected custom configuration changes**: 
+![image](https://github.com/user-attachments/assets/e0b1cfad-dff5-493d-b77e-83b7f7dd03a7)
+
