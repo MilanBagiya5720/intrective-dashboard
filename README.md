@@ -180,5 +180,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Test Coverage
 
-- **100% Test Coverage**: The project has achieved 100% test coverage, ensuring all code paths are well-tested. ![Test Coverage Badge]
+- **100% Test Coverage**: The project has achieved 100% test coverage, ensuring all code paths are well-tested.
 ![image](https://github.com/user-attachments/assets/8e78b424-d976-4cad-945e-9f6ddf5053ef)
